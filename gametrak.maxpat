@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -72,7 +72,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 690.0, 340.0, 303.0, 289.0 ],
-					"text" : "/x : 0.0475343,\n/y : 0.225872,\n/z : 0.00592486,\n/x/prev : 0.0475234,\n/y/prev : 0.225873,\n/z/prev : 0.00592711,\n/x/velocity/prev : 0.,\n/y/velocity/prev : 0.,\n/z/velocity/prev : 0.,\n/delta/new : 1,\n/delta : 1.,\n/threshold/distance : 0.001,\n/x/distance : 0.,\n/y/distance : 0.,\n/z/distance : 0.,\n/x/velocity : 0.,\n/y/velocity : 0.,\n/z/velocity : 0.,\n/x/acceleration : 0.,\n/y/acceleration : 0.,\n/z/acceleration : 0."
+					"text" : "/x : 1.00249e-28,\n/y : 0.666961,\n/z : 1.77453e-29,\n/x/prev : 1.03705e-28,\n/y/prev : 0.666976,\n/z/prev : 1.83572e-29,\n/x/velocity/prev : 0.,\n/y/velocity/prev : 0.,\n/z/velocity/prev : 0.,\n/delta/new : 1,\n/delta : 1.,\n/threshold/distance : 0.001,\n/x/distance : 0.,\n/y/distance : 0.,\n/z/distance : 0.,\n/x/velocity : 0.,\n/y/velocity : 0.,\n/z/velocity : 0.,\n/x/acceleration : 0.,\n/y/acceleration : 0.,\n/z/acceleration : 0."
 				}
 
 			}
@@ -266,7 +266,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "FullPacket", "FullPacket" ],
 					"patching_rect" : [ 73.0, 322.0, 467.0, 403.0 ],
-					"text" : "/threshold/distance ??= 0.001,\n/delta ??= 10,\n/delta/new ??= 10,\n\n/x = scale(/x, 0, 4096, 0., 1.),\n/y = scale(/y, 0, 4096, 0., 1.),\n\n/z = 4095 - /z,\n/z = scale(/z, 0, 4096, 0., 1.),\n\n/delta = if(/delta == 0, 1, /delta),\n/delta/new = if(/delta/new == 0, 1, /delta/new),\n/delta = /delta * 0.99 + /delta/new * 0.01,\n\n/x/distance = /x - /x/prev,\n/y/distance = /y - /y/prev,\n/z/distance = /z - /z/prev,\n\n/x/distance = if(/x/distance < /threshold/distance, 0., /x/distance),\n/y/distance = if(/y/distance < /threshold/distance, 0., /y/distance),\n/z/distance = if(/z/distance < /threshold/distance, 0., /z/distance),\n\n/x/velocity = /x/distance / /delta * /z * 1000,\n/y/velocity = /y/distance / /delta * /z * 1000,\n/z/velocity = /z/distance / /delta * 1000,\n\n/x/acceleration = (/x/velocity - /x/velocity/prev) / /delta * 1000,\n/y/acceleration = (/y/velocity - /y/velocity/prev) / /delta * 1000,\n/z/acceleration = (/z/velocity - /z/velocity/prev) / /delta * 1000\n"
+					"text" : "/threshold/distance ??= 0.001,\n/delta ??= 10,\n/delta/new ??= 10,\n\n/x = scale(/x, 0, 4096, 0., 1.),\n/y = scale(/y, 0, 4096, 0., 1.),\n\n# /z = 4095 - /z,\n/z = scale(/z, 0, 4096, 0., 1.),\n\n/delta = if(/delta == 0, 1, /delta),\n/delta/new = if(/delta/new == 0, 1, /delta/new),\n/delta = /delta * 0.99 + /delta/new * 0.01,\n\n/x/distance = /x - /x/prev,\n/y/distance = /y - /y/prev,\n/z/distance = /z - /z/prev,\n\n/x/distance = if(/x/distance < /threshold/distance, 0., /x/distance),\n/y/distance = if(/y/distance < /threshold/distance, 0., /y/distance),\n/z/distance = if(/z/distance < /threshold/distance, 0., /z/distance),\n\n/x/velocity = /x/distance / /delta * /z * 1000,\n/y/velocity = /y/distance / /delta * /z * 1000,\n/z/velocity = /z/distance / /delta * 1000,\n\n/x/acceleration = (/x/velocity - /x/velocity/prev) / /delta * 1000,\n/y/acceleration = (/y/velocity - /y/velocity/prev) / /delta * 1000,\n/z/acceleration = (/z/velocity - /z/velocity/prev) / /delta * 1000\n"
 				}
 
 			}

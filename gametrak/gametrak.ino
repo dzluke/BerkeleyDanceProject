@@ -11,16 +11,17 @@
 #include <OSCMessage.h>
 #include <OSCBundle.h>
 
-char ssid[] = "Spaceship Kineviz";          // your network SSID (name)
-char pass[] = "12345678";                    // your network password
+//char ssid[] = "Spaceship Kineviz";          // your network SSID (name)
+//char pass[] = "12345678";                    // your network password
 
-//char ssid[] = "noisense";          // your network SSID (name)
-//char pass[] = "";                    // your network password
+char ssid[] = "noisense";          // your network SSID (name)
+char pass[] = "";                    // your network password
+
 
 IPAddress dest_ip;        // remote IP of your computer, let's broadcast the data
 
 
-//const int GAMETRAK_ID = 2;
+//const char* GAMETRAK_ID = "3";
 
 WiFiUDP Udp;                                  // A UDP instance to let us send and receive packets over UDP
 const unsigned int dest_port = 7000;          // remote port to send OSC to
@@ -41,8 +42,8 @@ void setup() {
   WiFi.begin(ssid, pass);
 
   while (WiFi.status() != WL_CONNECTED) {
-      delay(500);
-      Serial.print(".");
+    delay(500);
+    Serial.print(".");
   }
   Serial.println("");
 
@@ -54,6 +55,16 @@ void setup() {
   Udp.begin(local_port);
   Serial.print("Local port: ");
   Serial.println(local_port);
+
+// this doesnt work
+//  for (int i = 0; i < sizeof(osc_addrs) / sizeof(osc_addrs[0]); i++) {
+//    char addr[5];
+//    strcpy(addr, "/");
+//    strcat(addr, GAMETRAK_ID);
+//    strcat(addr, osc_addrs[i]);
+//    strcpy(osc_addrs[i], addr);
+//    
+//  }
 
 }
 
